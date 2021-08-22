@@ -1,4 +1,0 @@
-Accept images only belonging to a list of extension supported by tesseract.js (jpg, jpeg, png, ...)
-
-user should be albe to select the language of the text in the image
-user should be able to determine a whitelist of characters that should be extracted from the image
