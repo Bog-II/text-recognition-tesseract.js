@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/boilerplate.css" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <title>Tesseract - CDN</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./src/images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./src/images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./src/images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./src/images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./src/images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./src/images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./src/images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./src/images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./src/images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./src/images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./src/images//manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- v2 -->
+    <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+  </head>
+  <body>
+    <script type="module" src="/src/main.ts" defer></script>
+
+    <div id="container-upload">
+      <label for="input-image" id="input-image-container">
+        <img src="about:blank" alt="image-uploaded" id="uploaded-image" />
+
+        <!-- Upload icon - SVG -->
+        <svg
+          width="200"
+          height="159"
+          viewBox="0 0 200 159"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          id="upload-icon-svg"
+        >
+          <path
+            d="M196.552 0H3.44828C1.54483 0 0 1.54138 0 3.44828V155.172C0 157.079 1.54483 158.621 3.44828 158.621H196.552C198.455 158.621 200 157.079 200 155.172V3.44828C200 1.54138 198.455 0 196.552 0ZM193.103 151.724H6.89655V6.89655H193.103V151.724Z"
+            fill="#666666"
+          />
+          <path
+            d="M51.2034 78.0276C61.7931 78.0276 70.4069 69.4138 70.4069 58.8276C70.4069 48.2345 61.7931 39.6207 51.2034 39.6207C40.6138 39.6207 32 48.2345 32 58.8241C32 69.4138 40.6138 78.0276 51.2034 78.0276ZM51.2034 46.5172C57.9897 46.5172 63.5103 52.0414 63.5103 58.8241C63.5103 65.6069 57.9897 71.131 51.2034 71.131C44.4172 71.131 38.8966 65.6103 38.8966 58.8276C38.8966 52.0448 44.4172 46.5172 51.2034 46.5172Z"
+            fill="#666666"
+          />
+          <path
+            d="M24.1379 137.931C24.9448 137.931 25.7586 137.648 26.4138 137.072L82.6655 87.5483L118.19 123.069C119.538 124.417 121.717 124.417 123.065 123.069C124.414 121.721 124.414 119.541 123.065 118.193L106.49 101.617L138.148 66.9483L176.979 102.545C178.383 103.831 180.565 103.735 181.852 102.331C183.138 100.928 183.045 98.7449 181.638 97.4587L140.259 59.5276C139.583 58.9104 138.683 58.6035 137.776 58.6242C136.862 58.6656 136 59.069 135.383 59.7449L101.61 96.7345L85.2551 80.3794C83.9655 79.0932 81.9034 79.0276 80.5379 80.2276L21.8586 131.893C20.4276 133.152 20.2896 135.331 21.5483 136.762C22.231 137.538 23.1827 137.931 24.1379 137.931Z"
+            fill="#666666"
+          />
+        </svg>
+        <!-- End - Upload image - SVG -->
+
+        <span id="upload-description"
+          >Drop an image here to extract its text!</span
+        >
+
+        <input type="file" id="input-image" accept="image/*" />
+      </label>
+
+      <div id="container-options">
+        <div id="language-select-container">
+          <label for="language-select" id="language-select-label">
+            <!-- Language Selection - SVG -->
+            <svg
+              width="28"
+              height="25"
+              viewBox="0 0 28 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.8375 16.3375L11.6625 13.2L11.7 13.1625C13.875 10.7375 15.425 7.95 16.3375 5H20V2.5H11.25V0H8.75V2.5H0V4.9875H13.9625C13.125 7.4 11.8 9.6875 10 11.6875C8.8375 10.4 7.875 8.9875 7.1125 7.5H4.6125C5.525 9.5375 6.775 11.4625 8.3375 13.2L1.975 19.475L3.75 21.25L10 15L13.8875 18.8875L14.8375 16.3375ZM21.875 10H19.375L13.75 25H16.25L17.65 21.25H23.5875L25 25H27.5L21.875 10ZM18.6 18.75L20.625 13.3375L22.65 18.75H18.6Z"
+                fill="black"
+              />
+            </svg>
+            <!-- End - Language Selection - SVG -->
+            Language
+          </label>
+          <select id="language-select">
+            <option value="afr">Afrikaans</option>
+            <option value="sqi">Albanian</option>
+            <option value="ara">Arabic</option>
+            <option value="aze">Azerbaijani</option>
+            <option value="eus">Basque</option>
+            <option value="bel">Belarusian</option>
+            <option value="ben">Bengali</option>
+            <option value="bul">Bulgarian</option>
+            <option value="cat">Catalan</option>
+            <option value="chr">Cherokee</option>
+            <option value="chi_sim">Chinese</option>
+            <option value="hrv">Croatian</option>
+            <option value="ces">Czech</option>
+            <option value="dan">Danish</option>
+            <option value="nld">Dutch</option>
+            <option value="eng" selected>English</option>
+            <option value="enm">English (Old)</option>
+            <option value="epo">Esperanto</option>
+            <option value="epo_alt">Esperanto alternative</option>
+            <option value="est">Estonian</option>
+            <option value="fin">Finnish</option>
+            <option value="frk">Frankish</option>
+            <option value="fra">French</option>
+            <option value="frm">French (Old)</option>
+            <option value="glg">Galician</option>
+            <option value="deu">German</option>
+            <option value="ell">Greek</option>
+            <option value="grc">Greek (Ancient)</option>
+            <option value="heb">Hebrew</option>
+            <option value="hin">Hindi</option>
+            <option value="hun">Hungarian</option>
+            <option value="isl">Icelandic</option>
+            <option value="ind">Indonesian</option>
+            <option value="meme">Internet Meme</option>
+            <option value="ita">Italian</option>
+            <option value="ita_old">Italian (Old)</option>
+            <option value="jpn">Japanese</option>
+            <option value="kan">Kannada</option>
+            <option value="kor">Korean</option>
+            <option value="lav">Latvian</option>
+            <option value="lit">Lithuanian</option>
+            <option value="mkd">Macedonian</option>
+            <option value="msa">Malay</option>
+            <option value="mal">Malayalam</option>
+            <option value="mlt">Maltese</option>
+            <option value="equ">Math</option>
+            <option value="nor">Norwegian</option>
+            <option value="pol">Polish</option>
+            <option value="por">Portuguese</option>
+            <option value="ron">Romanian</option>
+            <option value="rus">Russian</option>
+            <option value="srp">Serbian (Latin)</option>
+            <option value="slk">Slovakian</option>
+            <option value="slv">Slovenian</option>
+            <option value="spa">Spanish</option>
+            <option value="spa_old">Spanish (Old)</option>
+            <option value="swa">Swahili</option>
+            <option value="swe">Swedish</option>
+            <option value="tgl">Tagalog</option>
+            <option value="tam">Tamil</option>
+            <option value="tel">Telugu</option>
+            <option value="tha">Thai</option>
+            <option value="chi_tra">Traditional Chinese</option>
+            <option value="tur">Turkish</option>
+            <option value="ukr">Ukrainian</option>
+            <option value="vie">Vietnamese</option>
+          </select>
+        </div>
+
+        <div id="whitelist-container">
+          <label for="whitelist-characters" id="whitelist-characters-label">
+            <!-- Whitelist - SVG -->
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.1156 8.72727V0H22.6295V2.90909H8.48607V0H0V8.72727H2.82869V23.2727H0V32H8.48607V29.0909H22.6295V32H31.1156V23.2727H28.2869V8.72727H31.1156ZM2.82869 2.90909H5.65738V5.81818H2.82869V2.90909ZM5.65738 29.0909H2.82869V26.1818H5.65738V29.0909ZM22.6295 26.1818H8.48607V23.2727H5.65738V8.72727H8.48607V5.81818H22.6295V8.72727H25.4582V23.2727H22.6295V26.1818ZM28.2869 29.0909H25.4582V26.1818H28.2869V29.0909ZM25.4582 5.81818V2.90909H28.2869V5.81818H25.4582ZM18.0046 18.9091H13.0685L12.0361 21.8182H9.74483L14.5536 8.72727H16.5337L21.3566 21.8182H19.0512L18.0046 18.9091ZM13.705 17.0764H17.3964L15.5578 11.5055L13.705 17.0764Z"
+                fill="black"
+              />
+            </svg>
+            <!-- End - Whitelist - SVG -->
+            Whitelist Characters
+          </label>
+          <textarea
+            placeholder="e.g. 0123456789 to only extract digits"
+            id="whitelist-characters"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div id="container-extract-button">
+      <button id="submit-extract">
+        <!-- Extract Text - SVG -->
+        <svg
+          width="56"
+          height="50"
+          viewBox="0 0 56 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.5278 0L16.4444 19.6389H23.7222L25.6667 7.13889H32.8333L27.2222 42.8611H20.75L19.6111 50H39.8055L40.9167 42.8611H34.3889L39.9444 7.13889H47.1111L45.1389 19.6389H52.5L55.5555 0H19.5278ZM16.6667 5.55556H5.55555L4.69444 11.1111H15.8056L16.6667 5.55556ZM14.9722 16.6667H3.86111L3 22.2222H14.1111L14.9722 16.6667ZM17.5278 38.8889H0.861111L0 44.4444H16.6667L17.5278 38.8889ZM19.25 27.7778H2.58333L1.72222 33.3333H18.4167L19.25 27.7778Z"
+            fill="black"
+          />
+        </svg>
+        <!-- End - Extract Text - SVG -->
+        EXTRACT
+      </button>
+    </div>
+
+    <div id="result-progress-wrapper">
+      <div>
+        <div id="progressbar-container">
+          <span id="progress-statue"></span>
+          <progress id="progressbar" max="1" value="0"></progress>
+        </div>
+      </div>
+
+      <div id="result-container">
+        <p id="result-content">
+        </p>
+
+        <div id="fab-result">
+          <button class="fab-button" id="copy-to-clipoard">
+            <!-- Copy to Clipoard - SVG -->
+            <svg
+              width="14"
+              height="16"
+              viewBox="0 0 14 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.1818 0H1.45455C0.654545 0 0 0.654545 0 1.45455V11.6364H1.45455V1.45455H10.1818V0ZM12.3636 2.90909H4.36364C3.56364 2.90909 2.90909 3.56364 2.90909 4.36364V14.5455C2.90909 15.3455 3.56364 16 4.36364 16H12.3636C13.1636 16 13.8182 15.3455 13.8182 14.5455V4.36364C13.8182 3.56364 13.1636 2.90909 12.3636 2.90909ZM12.3636 14.5455H4.36364V4.36364H12.3636V14.5455Z"
+                fill="black"
+              />
+            </svg>
+            <!-- End - Copy to Clipoard - SVG -->
+          </button>
+
+          <button class="fab-button" id="download-result">
+            <!-- Download - SVG -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 8L14.59 6.59L9 12.17V0H7V12.17L1.42 6.58L0 8L8 16L16 8Z"
+                fill="#010101"
+              />
+            </svg>
+            <!-- End - Download - SVG -->
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="credentials"></div>
+  </body>
+</html>

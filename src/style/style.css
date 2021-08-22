@@ -1,0 +1,246 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 6% 5% 6% 5%;
+  row-gap: 8vh;
+}
+
+#container-upload {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 4%;
+  flex-direction: row;
+}
+
+#input-image-container,
+#whitelist-container,
+#language-select-container,
+#container-options {
+  display: flex;
+  flex-direction: column;
+}
+
+#input-image-container {
+  justify-content: space-around;
+  align-items: center;
+  border: 1px dashed #666666;
+  border-radius: 2%;
+
+  padding: 5%;
+  position: relative;
+  row-gap: max(8%, 16px);
+  transition: box-shadow 450ms ease;
+}
+
+#input-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#uploaded-image {
+  display: none;
+  max-height: max(300px, 30vh);
+  max-width: max(300px, 30vw);
+  object-fit: scale-down;
+  border-radius: 4px;
+}
+
+#language-select-container,
+#whitelist-container {
+  justify-content: left;
+  align-items: center;
+  row-gap: max(1vh, 8px);
+}
+
+#language-select-container > select {
+  width: 100%;
+  height: auto;
+}
+
+#container-options {
+  justify-content: space-between;
+  row-gap: max(4vh, 24px);
+}
+
+/* whitelist-container */
+
+/* whitelist-container */
+
+#whitelist-container,
+#whitelist-characters {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#whitelist-characters {
+  background-color: #fff;
+  border-radius: 4px 4px 0% 4px;
+  padding: 2% 4% 2% 4%;
+  box-sizing: border-box;
+}
+
+#language-select-label,
+#whitelist-characters-label {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+
+/* submit-extract */
+
+#container-extract-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-extract {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+
+  font-weight: 600;
+
+  column-gap: min(16px, 2vw);
+  font-size: 64px;
+  padding: 2% 4% 2% 4%;
+
+  background-color: #14f0f0;
+  border: 1px solid #000;
+  border-radius: 12px;
+  transition: 300ms all ease-in-out;
+}
+
+/* result */
+
+#result-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  position: relative;
+  height: 25vh;
+  width: 70%;
+  padding: 16px;
+  text-align: left;
+
+  overflow: scroll;
+
+  border-radius: 8px;
+  border: 1px solid #000;
+  transition: box-shadow 1500ms ease-in-out;
+
+  overflow-x: hidden;
+}
+
+#result-content {
+  position: relative;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+#fab-result {
+  display: flex;
+  column-gap: 8px;
+
+  position: absolute;
+
+  right: 10px;
+  top: 10px;
+}
+
+.fab-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+
+  background-color: #14f0f0;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+.blue-box-shadow {
+  box-shadow: 12px 12px 80px rgba(7, 121, 197, 0.4),
+    -12px -12px 80px rgba(7, 121, 197, 0.4);
+
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.red-box-shadow {
+  box-shadow: 6px 6px 100px rgba(186, 39, 17, 40%),
+    -6px -6px 100px rgba(186, 39, 17, 40%);
+  transition: box-shadow 450ms ease-in-out;
+}
+
+.green-box-shadow {
+  box-shadow: 10px 10px 100px rgba(0, 150, 32, 0.4),
+    -10px -10px 100px rgba(0, 150, 32, 0.4);
+  transition: box-shadow 2000ms ease-in-out;
+}
+
+#progressbar,
+#progressbar-container {
+  visibility: hidden;
+}
+
+#progressbar-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#result-progress-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  row-gap: 8px;
+}
+
+#submit-extract:active,
+.fab-button:active {
+  background-color: #32dbdb;
+  transition: 100ms all ease-in-out;
+}
+
+@media (max-width: 768px) {
+  #result-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 630px) {
+  #submit-extract {
+    font-size: 44px;
+  }
+
+  #container-upload {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+#credentials {
+  font-size: 14px;
+}
+
