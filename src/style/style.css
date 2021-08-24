@@ -184,8 +184,8 @@ body {
 }
 
 .red-box-shadow {
-  box-shadow: 6px 6px 100px rgba(186, 39, 17, 40%),
-    -6px -6px 100px rgba(186, 39, 17, 40%);
+  box-shadow: 6px 6px 100px rgba(186, 39, 17, 0.4),
+    -6px -6px 100px rgba(186, 39, 17, 0.4);
   transition: box-shadow 450ms ease-in-out;
 }
 
@@ -243,4 +243,3 @@ body {
 #credentials {
   font-size: 14px;
 }
-
